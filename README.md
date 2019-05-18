@@ -1,11 +1,12 @@
-To run the Laravel web app, we need to generate an `.env` file, use docker to run `composer install` (if you don't have it installed already).
+To run the Laravel web app, we need to generate an `.env` file, use docker to run `composer install` (if you don't have it installed already), then generate a key for Laravel.
 
 ```bash
 cd laravel-app
 cp -a .env.example .env
-sudo docker-compose exec app php artisan key:generate
 sudo docker run --rm -v $(pwd):/app composer install
-```bash
+sudo docker-compose exec app php artisan key:generate
+
+```
 
 We need to make sure te file permissions are correct so go back to the root dir of this repo and run
 
