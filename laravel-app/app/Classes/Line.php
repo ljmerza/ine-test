@@ -48,7 +48,6 @@ class Line {
 
     $a1 = $p2_y - $p1_y; 
     $b1 = $p1_x - $p2_x; 
-    $c1 = $a1*$p1_x + $b1*$p1_y;
 
 
     $line_p1_x = $this->p1->getX();
@@ -58,7 +57,6 @@ class Line {
 
     $a2 = $line_p2_y - $line_p1_y; 
     $b2 = $line_p1_x - $line_p2_x; 
-    $c2 = $a2*$line_p1_x + $b2*$line_p1_y; 
 
 
     $determinant = $a1*$b2 - $a2*$b1;
