@@ -9,7 +9,7 @@ git clone git@github.com:ljmerza/ine-test.git
 cd ~/ine-test/laravel-app/
 ```
 
-Use docker to run `composer install` (if you don't have it installed already) and mak sure the file permissions are correct before moving to docker.
+Use docker to run `composer install` (if you don't have it installed already) and make sure the file permissions are correct before moving to docker.
 
 ```bash
 sudo docker run --rm -v $(pwd):/app composer install
