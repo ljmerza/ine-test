@@ -1,23 +1,32 @@
-To run the Laravel web app, we need to generate an `.env` file, use docker to run `composer install` (if you don't have it installed already), then generate a key for Laravel.
+## Installation for Laravel App
+
+Clone the repo:
+
 
 ```bash
-cd laravel-app
-cp -a .env.example .env
+cd ~
+git clone git@github.com:ljmerza/ine-test.git
+cd ~/ine-test/laravel-app/
+```
+
+Use docker to run `composer install` (if you don't have it installed already) and mak sure the file permissions are correct before moving to docker.
+
+```bash
 sudo docker run --rm -v $(pwd):/app composer install
-sudo docker-compose exec app php artisan key:generate
-
+sudo chown -R $USER:$USER ~/ine-test
 ```
 
-We need to make sure te file permissions are correct so go back to the root dir of this repo and run
+Copy the `.env` file then start docker
 
 ```bash
-sudo chown -R $USER:$USER ~/laravel-app
-```
-
-Then run `docker-compose` to start the Laravel web app.
-
-```bash
+cp .env.example .env
 sudo docker-compose up -d
 ```
 
-Now you can open the Laravel web app on port 8080 in the web browser
+We'll need to generate a key for Laravel
+
+```bash
+sudo docker-compose exec app php artisan key:generate
+```
+
+Open the Laravel web app on port 8080 in the web browser
